@@ -1,27 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url(https://fonts.googleapis.com/css?family=Lexend:100,200,300,regular,500,600,700,800,900);
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Lexend", sans-serif;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  box-sizing: border-box;
+  overflow: hidden;
+  print-color-adjust: economy;
 }
