@@ -14,6 +14,6 @@
   -o-transition: all 0.3s ease;
   transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   box-sizing: border-box;
-  overflow: hidden;
   print-color-adjust: economy;
 }
+
