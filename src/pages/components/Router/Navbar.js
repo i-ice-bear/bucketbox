@@ -3,6 +3,7 @@ import { Button, Switch, useTheme } from "@nextui-org/react";
 import { Navbar, Text, Avatar, Dropdown } from "@nextui-org/react";
 import { Layout } from "./Layout.js";
 import Link from "next/link.js";
+import Image from "next/image.js";
 
 export const ThemeSwitch = () => {
   const { setTheme } = useNextTheme();
@@ -32,10 +33,10 @@ const NavbarComponent = () => {
     "Log Out",
   ];
   const navigationsPid = [
-    { name: "home", href: "/", active: false },
-    { name: "Contact", href: "/", active: false },
+    { name: "Home", href: "/", active: false },
+    { name: "Dashboard", href: "/", active: false },
     { name: "About", href: "/", active: false },
-  
+    { name: "Community", href: "/", active: false },
   ];
   return (
     <>
@@ -49,7 +50,7 @@ const NavbarComponent = () => {
               },
             }}
           >
-            Logo Area Bitch!
+            <Image src="/vercel.svg" width={100} height={100} />
           </Navbar.Brand>
           <Navbar.Content
             enableCursorHighlight
@@ -60,9 +61,11 @@ const NavbarComponent = () => {
             {navigationsPid &&
               navigationsPid.map((item) => {
                 return (
-                  <Link href={item.href} {...item}>
-                    <Text h6>{item.name}</Text>
-                  </Link>
+                  <div className="m-3 mt-6">
+                    <Link href={item.href} {...item}>
+                      <Text h4>{item.name}</Text>
+                    </Link>
+                  </div>
                 );
               })}
           </Navbar.Content>
@@ -121,12 +124,12 @@ const NavbarComponent = () => {
             </Dropdown>
           </Navbar.Content>
           <Navbar.Collapse disableAnimation>
-            {collapseItems.map((item, index) => (
+            {/* {navigationsPid.map((item, index) => (
               <Navbar.CollapseItem
                 key={item}
                 activeColor="warning"
                 css={{
-                  color: index === collapseItems.length - 1 ? "$error" : "",
+                  color: index === navigationsPid.length - 1 ? "$error" : "",
                 }}
                 isActive={index === 2}
               >
@@ -140,7 +143,17 @@ const NavbarComponent = () => {
                   {item}
                 </Link>
               </Navbar.CollapseItem>
-            ))}
+            ))} */}
+
+            {navigationsPid.map((item) => {
+              return (
+                <Navbar.CollapseItem>
+                  <Link href={item.href}>
+                    <Text h4>{item.name}</Text>
+                  </Link>
+                </Navbar.CollapseItem>
+              );
+            })}
           </Navbar.Collapse>
         </Navbar>
       </Layout>
