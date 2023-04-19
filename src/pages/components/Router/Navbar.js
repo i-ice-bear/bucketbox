@@ -1,7 +1,7 @@
 import { useTheme as useNextTheme } from "next-themes";
 import { Button, Switch, useTheme } from "@nextui-org/react";
 import { Navbar, Text, Avatar, Dropdown } from "@nextui-org/react";
-import { Layout } from "./Layout.js";
+import Layout  from "./Layout.js";
 import Link from "next/link.js";
 import Image from "next/image.js";
 
